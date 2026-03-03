@@ -1,5 +1,7 @@
 let word_contibner_item = document.querySelector(".word");
+let word_contibner_item2 = document.querySelector(".word2");
 let word_continer = document.querySelector("#word-container");
+let Card = document.querySelector(".Card")
 // lesson function
 
 let lessonfunction = () => {
@@ -15,20 +17,26 @@ let lessonfunction = () => {
 
         let getIdfromLi = document.querySelectorAll(".event")
         getIdfromLi.forEach((f) => {
-            // console.log(f)
+            console.log(f)
             f.addEventListener("click", () => {
                 if (f.innerText.trim() == "7.Mastering Vocabulary") {
-                    console.log("click 0n 7")
+
+                    word_continer.classList.add("bg-gray-200")
+                    word_contibner_item.classList.add("hidden")
+                    word_contibner_item2.classList.remove("hidden")
+                    
                 }
 
                 if (f.innerText.trim() == "6.Mastering Vocabulary") {
-                    console.log("clicked on 6")
+                    word_continer.classList.add("bg-gray-200")
+                    word_contibner_item.classList.add("hidden")
+                    word_contibner_item2.classList.remove("hidden")
                 }
 
-                if (f.innerText == "5.Complex Words") {
+                if (f.innerText.trim() == "5.Complex Words") {
                     word_continer.classList.add("bg-gray-200")
-                    word_continer.classList.remove("flex-wrap")
-                    word_contibner_item.classList.remove("hidden")
+                    word_contibner_item.classList.add("hidden")
+                    word_contibner_item2.classList.remove("hidden")
                 }
                 
                 if (f.innerText == "1.Basic Vocabulary") {

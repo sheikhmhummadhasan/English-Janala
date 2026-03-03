@@ -75,7 +75,7 @@
     </section>
 
     <!-- section-2 -->
-    <section class="w-11/12 mx-auto flex flex-col gap-5">
+    <section class="Card w-11/12 mx-auto flex flex-col gap-5">
         <h2 class="text-4xl font-bold mb-4 text-center"><span class="text-[#00bcff]">Let's</span> Learn Vocabularies</h2>
         <div class="lesson-data mx-auto w-11/12">
             <ul class="ul flex items-center gap-2 justify-center">
@@ -85,10 +85,16 @@
     </section>
 
     <!-- word container -->
-     <section id="word-container" class="w-11/12 mx-auto my-25 flex gap-5 bg-gray-200">
+     <section id="word-container" class="w-11/12 mx-auto my-25 flex gap-5 items-center justify-center bg-gray-200">
         <div class="word p-3 flex flex-col w-[100%] items-center justify-center">
             <p>আপনি এখনো কোন Lesson Select করেন ন</p>
-            <h2>একটি Lesson Select করুন।</h2>
+            <h2 class="text-3xl font-bold mt-2">একটি Lesson Select করুন।</h2>
+        </div>
+
+        <div class="word2 flex hidden mb-5 mt-5 flex-col items-center justify-center text-center">
+            <img src="./assets/alert-error.png" alt="">
+            <p>এই Lesson এ এখনো কোন Vocabulary যুক্ত করা হয়নি।</p>
+            <h2 class="text-3xl font-bold mt-2">নেক্সট Lesson এ যান</h2>
         </div>
      </section>
     <script src="script.js"></script>
