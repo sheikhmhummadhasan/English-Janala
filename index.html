@@ -13,7 +13,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
-<body>
+<body class="">
     <!-- header -->
     <header>
         <div class="navbar bg-base-100 shadow-sm">
@@ -76,27 +76,100 @@
 
     <!-- section-2 -->
     <section class="Card w-11/12 mx-auto flex flex-col gap-5">
-        <h2 class="text-4xl font-bold mb-4 text-center"><span class="text-[#00bcff]">Let's</span> Learn Vocabularies</h2>
+        <h2 class="text-4xl font-bold mb-4 text-center"><span class="text-[#00bcff]">Let's</span> Learn Vocabularies
+        </h2>
         <div class="lesson-data mx-auto w-11/12">
             <ul class="ul flex items-center gap-2 justify-center">
-                
+
             </ul>
         </div>
     </section>
 
     <!-- word container -->
-     <section id="word-container" class="w-11/12 mx-auto my-25 flex gap-5 items-center justify-center bg-gray-200">
-        <div class="word p-3 flex flex-col w-[100%] items-center justify-center">
-            <p>আপনি এখনো কোন Lesson Select করেন ন</p>
-            <h2 class="text-3xl font-bold mt-2">একটি Lesson Select করুন।</h2>
-        </div>
+    <section id="word-container" class="w-11/12 mx-auto my-25 flex gap-5 items-center justify-center bg-gray-200">
+        <div class="c">
+            <div class="word p-3 flex flex-col w-[100%] items-center justify-center">
+                <p>আপনি এখনো কোন Lesson Select করেন ন</p>
+                <h2 class="text-3xl font-bold mt-2">একটি Lesson Select করুন।</h2>
+            </div>
 
-        <div class="word2 flex hidden mb-5 mt-5 flex-col items-center justify-center text-center">
-            <img src="./assets/alert-error.png" alt="">
-            <p>এই Lesson এ এখনো কোন Vocabulary যুক্ত করা হয়নি।</p>
-            <h2 class="text-3xl font-bold mt-2">নেক্সট Lesson এ যান</h2>
+            <div class="word2 flex hidden mb-5 mt-5 flex-col items-center justify-center text-center">
+                <img src="./assets/alert-error.png" alt="">
+                <p>এই Lesson এ এখনো কোন Vocabulary যুক্ত করা হয়নি।</p>
+                <h2 class="text-3xl font-bold mt-2">নেক্সট Lesson এ যান</h2>
+            </div>
         </div>
-     </section>
+    </section>
+
+    <!-- info of word container -->
+    <section class="info flex items-center justify-center w-5/12 mx-auto absolute top-[150%] left-[30%] p-5 rounded-lg hidden bg-gray-300">
+        <div class="">
+            <h2 class="text-2xl font-semibold">Eager (<i class="fa-solid fa-microphone-lines"></i>:ইগার)</h2>
+            <h3 class="font-semibold mt-2 mb-2">Meaning</h3>
+            <p class="font-semibold mb-3">আগ্রহী</p>
+            <h2 class="font-semibold mb-2">Example</h2>
+            <p class="mb-3">The kids were eager to open their gifts.</p>
+            <p class="mb-2 font-semibold">সমার্থক শব্দ গুলো</p>
+            <div class="btns">
+                <button class="btn-1 bg-sky-200 py-2 px-3 rounded-sm">Enthusiastic</button>
+                <button class="btn-1 bg-sky-200 py-2 px-3 rounded-sm">excited</button>
+                <button class="btn-1 bg-sky-200 py-2 px-3 rounded-sm">keen</button>
+            </div>
+            <button class="btn bg-[#422AD5] text-[#E0E7FF] mt-4 border-none">Complete Learning</button>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="FAQ mb-10">
+        <h2 class="text-4xl font-bold mb-4 text-center"><span class="text-[#00bcff]">Frequently</span> Asked Questions
+        </h2>
+        <div class="faq">
+            <div
+                class="faq-1 p-3 cursor-pointer bg-gray-200 w-11/12 mx-auto mt-2 rounded-lg flex justify-between items-center">
+                <h4 class="font-semibold">1. How can I start learning English on this website? </h4> <i
+                    class="fa-solid fa-plus"></i>
+            </div>
+            <div
+                class="faq-1 p-3 cursor-pointer bg-gray-200 w-11/12 mx-auto mt-2 rounded-lg flex justify-between items-center">
+                <h4 class="font-semibold">2. Is this website free to use? </h4> <i class="fa-solid fa-plus"></i>
+            </div>
+            <div
+                class="faq-1 p-3 cursor-pointer bg-gray-200 w-11/12 mx-auto mt-2 rounded-lg flex justify-between items-center">
+                <h4 class="font-semibold">3. Do I need to create an account? </h4> <i class="fa-solid fa-plus"></i>
+            </div>
+            <div
+                class="faq-1 p-3 cursor-pointer bg-gray-200 w-11/12 mx-auto mt-2 rounded-lg flex justify-between items-center">
+                <h4 class="font-semibold">4. How can I build my English vocabulary? </h4> <i
+                    class="fa-solid fa-plus"></i>
+            </div>
+            <div
+                class="faq-1 p-3 cursor-pointer bg-gray-200 w-11/12 mx-auto mt-2 rounded-lg flex justify-between items-center">
+                <h4 class="font-semibold">5. Do you offer certificates for completed courses? </h4> <i
+                    class="fa-solid fa-plus"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer -->
+    <footer class="flex p-5 justify-between items-center">
+        <div class="left">
+            <a class="btn btn-ghost text-xl">
+                <span class="text-lg font-bold">English</span>
+                <img src="./assets/logo.png" alt="logo">
+                <span>জানালা</span>
+            </a>
+            <h2 class="font-semibold px-4">ইংরেজি শিখুন সহজে</h2>
+            <h3 class="font-semibold px-4">Providing ED-Tech Applications since 2025</h3>
+        </div>
+        <div class="right">
+            <p>Follow Us</p>
+            <div class="f-icon flex gap-1 my-1">
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-youtube"></i>
+            </div>
+        </div>
+    </footer>
     <script src="script.js"></script>
 </body>
 

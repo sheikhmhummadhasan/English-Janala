@@ -16,11 +16,11 @@ let lessonfunction = () => {
         })
 
         let getIdfromLi = document.querySelectorAll(".event")
+
         getIdfromLi.forEach((f) => {
             console.log(f)
             f.addEventListener("click", () => {
                 if (f.innerText.trim() == "7.Mastering Vocabulary") {
-
                     word_continer.classList.add("bg-gray-200")
                     word_contibner_item.classList.add("hidden")
                     word_contibner_item2.classList.remove("hidden")
@@ -87,8 +87,6 @@ let lessonfunction = () => {
 lessonfunction();
 
 
-
-
 // callibg-01
 function cardFunction() {
     let url = "https://openapi.programming-hero.com/api/level/5";
@@ -102,24 +100,25 @@ function cardFunction() {
         let card = document.querySelector("#word-container");
 
         res.data.slice(0, 10).forEach((e) => {
-            card.innerHTML += ` <div class="card p-8 rounded-3 w-80 bg-gray-100">
+            card.innerHTML += `
+                     <div class="card p-8 rounded-3 w-80 bg-gray-100">
             <div class="content-1 text-center flex flex-col gap-3">
                 <h3 class="font-bold text-lg">${e.word}</h3>
                 <p class="text-sm">Meaning /Pronounciation</p>
                 <h3 class="font-semibold">${e.meaning}</h3>
             </div>
             <div class="content-2 flex justify-between mt-10">
-                <button class="bg-[#1A91FF30] p-3 rounded-full hover:bg-[#1A91FF]"><i class="fa-solid fa-circle-info "></i></button class"">
-                <button class="bg-[#1A91FF30] p-3 rounded-full hover:bg-[#1A91FF]"><i class="fa-solid fa-volume-high "></i></button class"">
+                <button class="bg-[#1A91FF30] p-3 rounded-full hover:bg-[#1A91FF] info-btn"><i class="fa-solid fa-circle-info "></i></button>
+                <button class="bg-[#1A91FF30] p-3 rounded-full hover:bg-[#1A91FF] spker-btn"><i class="fa-solid fa-volume-high "></i></button>
             </div>
-        </div>`
+        </div>
+            `
         // console.log(e)
         })
     };
     fetchi()
 
 }
-
 
 // calling-02
 function cardFunction2() {
@@ -141,8 +140,8 @@ function cardFunction2() {
                 <h3 class="font-semibold">${e.meaning}</h3>
             </div>
             <div class="content-2 flex justify-between mt-10">
-                <button class="bg-[#1A91FF30] p-3 rounded-full hover:bg-[#1A91FF]"><i class="fa-solid fa-circle-info "></i></button class"">
-                <button class="bg-[#1A91FF30] p-3 rounded-full hover:bg-[#1A91FF]"><i class="fa-solid fa-volume-high "></i></button class"">
+                <button class="bg-[#1A91FF30] p-3 rounded-full hover:bg-[#1A91FF] info-btn"><i class="fa-solid fa-circle-info "></i></button>
+                <button class="bg-[#1A91FF30] p-3 rounded-full hover:bg-[#1A91FF] spker-btn"><i class="fa-solid fa-volume-high "></i></button>
             </div>
         </div>`
         // console.log(e)
@@ -172,8 +171,8 @@ function cardFunction3() {
                 <h3 class="font-semibold">${e.meaning}</h3>
             </div>
             <div class="content-2 flex justify-between mt-10">
-                <button class="bg-[#1A91FF30] p-3 rounded-full hover:bg-[#1A91FF]"><i class="fa-solid fa-circle-info "></i></button class"">
-                <button class="bg-[#1A91FF30] p-3 rounded-full hover:bg-[#1A91FF]"><i class="fa-solid fa-volume-high "></i></button class"">
+                <button class="bg-[#1A91FF30] p-3 rounded-full hover:bg-[#1A91FF] info-btn"><i class="fa-solid fa-circle-info "></i></button>
+                <button class="bg-[#1A91FF30] p-3 rounded-full hover:bg-[#1A91FF] spker-btn"><i class="fa-solid fa-volume-high "></i></button>
             </div>
         </div>`
         // console.log(e)
@@ -203,8 +202,8 @@ function cardFunction4() {
                 <h3 class="font-semibold">${e.meaning}</h3>
             </div>
             <div class="content-2 flex justify-between mt-10">
-                <button class="bg-[#1A91FF30] p-3 rounded-full hover:bg-[#1A91FF]"><i class="fa-solid fa-circle-info "></i></button class"">
-                <button class="bg-[#1A91FF30] p-3 rounded-full hover:bg-[#1A91FF]"><i class="fa-solid fa-volume-high "></i></button class"">
+                <button class="bg-[#1A91FF30] p-3 rounded-full hover:bg-[#1A91FF] info-btn"><i class="fa-solid fa-circle-info "></i></button>
+                <button class="bg-[#1A91FF30] p-3 rounded-full hover:bg-[#1A91FF] spker-btn"><i class="fa-solid fa-volume-high "></i></button>
             </div>
         </div>`
         // console.log(e)
@@ -212,3 +211,32 @@ function cardFunction4() {
     };
     fetchi3()
 }
+
+function infoOfword(){
+    let url = "https://openapi.programming-hero.com/api/word/5"
+    let fetching =async () =>{
+        let res = await fetch(url);
+        let resp = await res.json();
+        console.log(resp.data)
+    };
+    fetching()
+
+}
+infoOfword()
+
+let info = document.querySelector(".info");
+document.querySelector("#word-container")
+.addEventListener("click", (e) => {
+    if (e.target.closest(".info-btn")) {
+        info.classList.remove("hidden")
+        info.classList.add("opacity-100")
+    }
+    
+});
+let body = document.querySelector("body");
+
+body.addEventListener("click",(e)=>{
+    if(!e.target.closest(".info-btn") && !e.target.closest(".popup-card")){
+        info.classList.add("hidden")
+    }
+})
