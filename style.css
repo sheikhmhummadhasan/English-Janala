@@ -14,13 +14,5 @@
     .content{
         margin: 0px auto;
     }
-    .navbar{
-        display: flex;
-        align-items: center;
-        gap: 100px;
-        justify-content: space-between;
-    }
-    /* .btn{
-        margin-left: 100px;
-    } */
+
 }

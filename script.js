@@ -28,7 +28,7 @@ function cardFunction() {
                 <h3 class="font-semibold">${e.meaning}</h3>
             </div>
             <div class="content-2 flex justify-between mt-10">
-                <button id="${e.id}" class="bg-[#1A91FF30] p-3 rounded-full hover:bg-[#1A91FF] info-btn"><i class="fa-solid fa-circle-info "></i></button>
+                <button id="${e.id}" class="bg-[#1A91FF30] p-3 rounded-full hover:bg-[#1A91FF] info-btn"><i id="${e.id}" class="fa-solid fa-circle-info "></i></button>
                 <button class="bg-[#1A91FF30] p-3 rounded-full hover:bg-[#1A91FF] spker-btn"><i class="fa-solid fa-volume-high "></i></button>
             </div>
         </div>
@@ -60,7 +60,7 @@ function cardFunction2() {
                 <h3 class="font-semibold">${e.meaning}</h3>
             </div>
             <div class="content-2 flex justify-between mt-10">
-                <button id="${e.id}" class="bg-[#1A91FF30] p-3 rounded-full hover:bg-[#1A91FF] info-btn"><i class="fa-solid fa-circle-info "></i></button>
+                <button id="${e.id}" class="bg-[#1A91FF30] p-3 rounded-full hover:bg-[#1A91FF] info-btn"><i id="${e.id}" class="fa-solid fa-circle-info "></i></button>
                 <button class="bg-[#1A91FF30] p-3 rounded-full hover:bg-[#1A91FF] spker-btn"><i class="fa-solid fa-volume-high "></i></button>
             </div>
         </div>`
@@ -91,7 +91,7 @@ function cardFunction3() {
                 <h3 class="font-semibold">${e.meaning}</h3>
             </div>
             <div class="content-2 flex justify-between mt-10">
-                <button id="${e.id}" class="bg-[#1A91FF30] p-3 rounded-full hover:bg-[#1A91FF] info-btn"><i class="fa-solid fa-circle-info "></i></button>
+                <button id="${e.id}" class="bg-[#1A91FF30] p-3 rounded-full hover:bg-[#1A91FF] info-btn"><i id="${e.id}" class="fa-solid fa-circle-info "></i></button>
                 <button class="bg-[#1A91FF30] p-3 rounded-full hover:bg-[#1A91FF] spker-btn"><i class="fa-solid fa-volume-high "></i></button>
             </div>
         </div>`
@@ -122,7 +122,7 @@ function cardFunction4() {
                 <h3 class="font-semibold">${e.meaning}</h3>
             </div>
             <div class="content-2 flex justify-between mt-10">
-                <button id="${e.id}" class="bg-[#1A91FF30] p-3 rounded-full hover:bg-[#1A91FF] info-btn"><i class="fa-solid fa-circle-info "></i></button>
+                <button id="${e.id}" class="bg-[#1A91FF30] p-3 rounded-full hover:bg-[#1A91FF] info-btn"><i id="${e.id}" class="fa-solid fa-circle-info "></i></button>
                 <button class="bg-[#1A91FF30] p-3 rounded-full hover:bg-[#1A91FF] spker-btn"><i class="fa-solid fa-volume-high "></i></button>
             </div>
         </div>`
@@ -139,7 +139,6 @@ function infoOfword(id) {
     let fetching = async () => {
         let res = await fetch(url);
         let resp = await res.json();
-        console.log(resp.data)
 
             info.innerHTML = `<div class="">
             <h2 class="text-2xl font-semibold">${resp.data.word} (<i class="fa-solid fa-microphone-lines"></i>:${resp.data.pronunciation})</h2>
@@ -171,7 +170,7 @@ let lessonfunction = () => {
     let fetching = async () => {
         let res = await fetch(url);
         let resJsonDataGet = await res.json();
-        console.log(resJsonDataGet)
+
         resJsonDataGet.data.forEach((e) => {
             lessonUl.innerHTML += `<li class="event px-1 btn btn-outline btn-primary"><i class="fa-solid fa-book-open"></i>${e.level_no}.${e.lessonName}</li>`
         })
@@ -186,13 +185,10 @@ let lessonfunction = () => {
 
                 f.classList.add("action")
 
-                console.log(f.innerText.trim())
-
                 if (f.innerText.trim() == "7.Mastering Vocabulary") {
                    let word_continerCardd = document.querySelectorAll(".card");
                     word_continerCardd.forEach((el) => {
                         el.classList.add("hidden")
-                        console.log(el)
                     })
                     word_continer.classList.add("hidden")
                     word_contibner_item.classList.add("hidden")
@@ -203,7 +199,6 @@ let lessonfunction = () => {
                     let word_continerCardd = document.querySelectorAll(".card");
                     word_continerCardd.forEach((el) => {
                         el.classList.add("hidden")
-                        console.log(el)
                     })
                     word_continer.classList.add("hidden")
                     word_contibner_item.classList.add("hidden")
@@ -214,7 +209,6 @@ let lessonfunction = () => {
                     let word_continerCardd = document.querySelectorAll(".card");
                     word_continerCardd.forEach((el) => {
                         el.classList.add("hidden")
-                        console.log(el)
                     })
                     word_continer.classList.add("hidden")
                     word_contibner_item.classList.add("hidden")
@@ -260,8 +254,6 @@ let lessonfunction = () => {
                     word_contibner_item.classList.add("hidden")
                     cardFunction4()
                 }
-
-                console.log(f)
             })
         })
     }
@@ -285,4 +277,53 @@ body.addEventListener("click", (e) => {
     if (!e.target.closest(".info-btn") && !e.target.closest(".popup-card")) {
         info.classList.add("hidden")
     }
+})
+
+// faq-and
+// faq-1
+// You can start learning English on this website by selecting a lesson from the menu and beginning the activities.
+
+
+// fa1-1
+let faq_qus1 = document.querySelector(".faq-1");
+faq_qus1.addEventListener("click",()=>{
+    let ans = document.querySelector(".faq-ans");
+    ans.classList.remove("hidden");
+    // console.log("hello")
+    ans.innerText = "You can start learning English on this website by selecting a lesson from the menu and beginning the activities.";
+})
+
+// faq-2
+let faq_qus2 = document.querySelector(".faq-2");
+faq_qus2.addEventListener("click",()=>{
+    let ans = document.querySelector(".faq-ans2");
+    ans.classList.remove("hidden");
+    // console.log("hello")
+    ans.innerText = "Yes, this website is free to use, and all learning materials are available at no cost";
+})
+// faq-3
+let faq_qus3 = document.querySelector(".faq-3");
+faq_qus3.addEventListener("click",()=>{
+    let ans = document.querySelector(".faq-ans3");
+    ans.classList.remove("hidden");
+    // console.log("hello")
+    ans.innerText = "No, you do not need to create an account to use the website, but creating a free account gives you extra features like commenting and tracking your progress.";
+})
+
+// faq-4
+let faq_qus4 = document.querySelector(".faq-4");
+faq_qus4.addEventListener("click",()=>{
+    let ans = document.querySelector(".faq-ans4");
+    ans.classList.remove("hidden");
+    // console.log("hello")
+    ans.innerText = "You can build your English vocabulary by practicing new words regularly, reading lessons, and completing vocabulary exercises on the website.";
+})
+
+// faq-5
+let faq_qus5 = document.querySelector(".faq-5");
+faq_qus5.addEventListener("click",()=>{
+    let ans = document.querySelector(".faq-ans5");
+    ans.classList.remove("hidden");
+    // console.log("hello")
+    ans.innerText = "Yes, certificates are offered for some courses, and you can receive a digital certificate after successfully completing them.";
 })
