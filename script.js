@@ -4,93 +4,7 @@ let word_continer = document.querySelector("#word-container");
 let Card = document.querySelector(".Card")
 // lesson function
 
-let lessonfunction = () => {
-    let url = "https://openapi.programming-hero.com/api/levels/all"
-    let lessonUl = document.querySelector(".ul");
 
-    let fetching = async () => {
-        let res = await fetch(url);
-        let resJsonDataGet = await res.json();
-        resJsonDataGet.data.forEach((e) => {
-            lessonUl.innerHTML += `<li class="event px-1 btn btn-outline btn-primary"><i class="fa-solid fa-book-open"></i>${e.level_no}.${e.lessonName}</li>`
-        })
-
-        let getIdfromLi = document.querySelectorAll(".event")
-
-        getIdfromLi.forEach((f) => {
-            f.addEventListener("click", () => {
-                document.querySelectorAll(".event").forEach((elem) =>{
-                    elem.classList.remove("action")
-                })
-
-                f.classList.add("action")
-                
-                if (f.innerText.trim() == "7.Mastering Vocabulary") {
-                    word_continer.classList.add("bg-gray-200")
-                    word_contibner_item.classList.add("hidden")
-                    word_contibner_item2.classList.remove("hidden")
-
-                }
-
-                if (f.innerText.trim() == "6.Mastering Vocabulary") {
-                    word_continer.classList.add("bg-gray-200")
-                    word_contibner_item.classList.add("hidden")
-                    word_contibner_item2.classList.remove("hidden")
-                }
-
-                if (f.innerText.trim() == "5.Complex Words") {
-                    word_continer.classList.add("bg-gray-200")
-                    word_contibner_item.classList.add("hidden")
-                    word_contibner_item2.classList.remove("hidden")
-                }
-
-                if (f.innerText == "1.Basic Vocabulary") {
-                    if (word_continer.innerHTML != "") {
-                        word_continer.innerHTML = ""
-                    }
-                    word_continer.classList.remove("bg-gray-200")
-                    word_continer.classList.add("flex-wrap")
-                    word_contibner_item.classList.add("hidden")
-                    cardFunction()
-                }
-
-                if (f.innerText == "2.Everyday Words") {
-                    if (word_continer.innerHTML != "") {
-                        word_continer.innerHTML = ""
-                    }
-                    word_continer.classList.remove("bg-gray-200")
-                    word_continer.classList.add("flex-wrap")
-                    word_contibner_item.classList.add("hidden")
-                    cardFunction2()
-                }
-
-                if (f.innerText == "3.Intermediate Vocabulary") {
-                    if (word_continer.innerHTML != "") {
-                        word_continer.innerHTML = ""
-                    }
-                    word_continer.classList.remove("bg-gray-200")
-                    word_continer.classList.add("flex-wrap")
-                    word_contibner_item.classList.add("hidden")
-                    cardFunction3()
-                }
-
-                if (f.innerText == "4.Advanced Vocabulary") {
-                    if (word_continer.innerHTML != "") {
-                        word_continer.innerHTML = ""
-                    }
-                    word_continer.classList.remove("bg-gray-200")
-                    word_continer.classList.add("flex-wrap")
-                    word_contibner_item.classList.add("hidden")
-                    cardFunction4()
-                }
-                
-                console.log(f)
-            })
-        })
-    }
-    fetching();
-}
-lessonfunction();
 
 
 // callibg-01
@@ -248,6 +162,95 @@ function infoOfword() {
 
 }
 infoOfword()
+
+
+let lessonfunction = () => {
+    let url = "https://openapi.programming-hero.com/api/levels/all"
+    let lessonUl = document.querySelector(".ul");
+
+    let fetching = async () => {
+        let res = await fetch(url);
+        let resJsonDataGet = await res.json();
+        resJsonDataGet.data.forEach((e) => {
+            lessonUl.innerHTML += `<li class="event px-1 btn btn-outline btn-primary"><i class="fa-solid fa-book-open"></i>${e.level_no}.${e.lessonName}</li>`
+        })
+
+        let getIdfromLi = document.querySelectorAll(".event")
+
+        getIdfromLi.forEach((f) => {
+            f.addEventListener("click", () => {
+                document.querySelectorAll(".event").forEach((elem) =>{
+                    elem.classList.remove("action")
+                })
+
+                f.classList.add("action")
+                
+                if (f.innerText.trim() == "7.Mastering Vocabulary") {
+                    word_continer.classList.add("bg-gray-200")
+                    word_contibner_item.classList.add("hidden")
+                    word_contibner_item2.classList.remove("hidden")
+
+                }
+
+                if (f.innerText.trim() == "6.Mastering Vocabulary") {
+                    word_continer.classList.add("bg-gray-200")
+                    word_contibner_item.classList.add("hidden")
+                    word_contibner_item2.classList.remove("hidden")
+                }
+
+                if (f.innerText.trim() == "5.Complex Words") {
+                    word_continer.classList.add("bg-gray-200")
+                    word_contibner_item.classList.add("hidden")
+                    word_contibner_item2.classList.remove("hidden")
+                }
+
+                if (f.innerText == "1.Basic Vocabulary") {
+                    if (word_continer.innerHTML != "") {
+                        word_continer.innerHTML = ""
+                    }
+                    word_continer.classList.remove("bg-gray-200")
+                    word_continer.classList.add("flex-wrap")
+                    word_contibner_item.classList.add("hidden")
+                    cardFunction()
+                }
+
+                if (f.innerText == "2.Everyday Words") {
+                    if (word_continer.innerHTML != "") {
+                        word_continer.innerHTML = ""
+                    }
+                    word_continer.classList.remove("bg-gray-200")
+                    word_continer.classList.add("flex-wrap")
+                    word_contibner_item.classList.add("hidden")
+                    cardFunction2()
+                }
+
+                if (f.innerText == "3.Intermediate Vocabulary") {
+                    if (word_continer.innerHTML != "") {
+                        word_continer.innerHTML = ""
+                    }
+                    word_continer.classList.remove("bg-gray-200")
+                    word_continer.classList.add("flex-wrap")
+                    word_contibner_item.classList.add("hidden")
+                    cardFunction3()
+                }
+
+                if (f.innerText == "4.Advanced Vocabulary") {
+                    if (word_continer.innerHTML != "") {
+                        word_continer.innerHTML = ""
+                    }
+                    word_continer.classList.remove("bg-gray-200")
+                    word_continer.classList.add("flex-wrap")
+                    word_contibner_item.classList.add("hidden")
+                    cardFunction4()
+                }
+                
+                console.log(f)
+            })
+        })
+    }
+    fetching();
+}
+lessonfunction();
 
 let info = document.querySelector(".info");
 document.querySelector("#word-container")
