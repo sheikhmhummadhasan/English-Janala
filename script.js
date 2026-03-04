@@ -155,7 +155,7 @@ function infoOfword() {
             </div>
             <button class="btn bg-[#422AD5] text-[#E0E7FF] mt-4 border-none">Complete Learning</button>
         </div>`
-        // console.log(e)
+            // console.log(e)
         })
     };
     fetching()
@@ -179,27 +179,40 @@ let lessonfunction = () => {
 
         getIdfromLi.forEach((f) => {
             f.addEventListener("click", () => {
-                document.querySelectorAll(".event").forEach((elem) =>{
+                document.querySelectorAll(".event").forEach((elem) => {
                     elem.classList.remove("action")
                 })
 
                 f.classList.add("action")
-                
+
+
+
                 if (f.innerText.trim() == "7.Mastering Vocabulary") {
-                    word_continer.classList.add("bg-gray-200")
+                   let word_continerCardd = document.querySelectorAll(".card");
+                    word_continerCardd.forEach((el) => {
+                        el.classList.add("hidden")
+                        console.log(el)
+                    })
                     word_contibner_item.classList.add("hidden")
                     word_contibner_item2.classList.remove("hidden")
-
                 }
 
                 if (f.innerText.trim() == "6.Mastering Vocabulary") {
-                    word_continer.classList.add("bg-gray-200")
+                    let word_continerCardd = document.querySelectorAll(".card");
+                    word_continerCardd.forEach((el) => {
+                        el.classList.add("hidden")
+                        console.log(el)
+                    })
                     word_contibner_item.classList.add("hidden")
                     word_contibner_item2.classList.remove("hidden")
                 }
 
                 if (f.innerText.trim() == "5.Complex Words") {
-                    word_continer.classList.add("bg-gray-200")
+                    let word_continerCardd = document.querySelectorAll(".card");
+                    word_continerCardd.forEach((el) => {
+                        el.classList.add("hidden")
+                        console.log(el)
+                    })
                     word_contibner_item.classList.add("hidden")
                     word_contibner_item2.classList.remove("hidden")
                 }
@@ -243,7 +256,7 @@ let lessonfunction = () => {
                     word_contibner_item.classList.add("hidden")
                     cardFunction4()
                 }
-                
+
                 console.log(f)
             })
         })
@@ -271,3 +284,5 @@ body.addEventListener("click", (e) => {
 })
 
 
+// w-11/12 mx-auto my-25 flex gap-5 items-center justify-center flex-wrap
+// w-11/12 mx-auto my-25 flex gap-5 items-center justify-center flex-wrap bg-gray-200
