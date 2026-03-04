@@ -28,7 +28,7 @@ function cardFunction() {
                 <h3 class="font-semibold">${e.meaning}</h3>
             </div>
             <div class="content-2 flex justify-between mt-10">
-                <button class="bg-[#1A91FF30] p-3 rounded-full hover:bg-[#1A91FF] info-btn"><i class="fa-solid fa-circle-info "></i></button>
+                <button id="${e.id}" class="bg-[#1A91FF30] p-3 rounded-full hover:bg-[#1A91FF] info-btn"><i class="fa-solid fa-circle-info "></i></button>
                 <button class="bg-[#1A91FF30] p-3 rounded-full hover:bg-[#1A91FF] spker-btn"><i class="fa-solid fa-volume-high "></i></button>
             </div>
         </div>
@@ -60,7 +60,7 @@ function cardFunction2() {
                 <h3 class="font-semibold">${e.meaning}</h3>
             </div>
             <div class="content-2 flex justify-between mt-10">
-                <button class="bg-[#1A91FF30] p-3 rounded-full hover:bg-[#1A91FF] info-btn"><i class="fa-solid fa-circle-info "></i></button>
+                <button id="${e.id}" class="bg-[#1A91FF30] p-3 rounded-full hover:bg-[#1A91FF] info-btn"><i class="fa-solid fa-circle-info "></i></button>
                 <button class="bg-[#1A91FF30] p-3 rounded-full hover:bg-[#1A91FF] spker-btn"><i class="fa-solid fa-volume-high "></i></button>
             </div>
         </div>`
@@ -91,7 +91,7 @@ function cardFunction3() {
                 <h3 class="font-semibold">${e.meaning}</h3>
             </div>
             <div class="content-2 flex justify-between mt-10">
-                <button class="bg-[#1A91FF30] p-3 rounded-full hover:bg-[#1A91FF] info-btn"><i class="fa-solid fa-circle-info "></i></button>
+                <button id="${e.id}" class="bg-[#1A91FF30] p-3 rounded-full hover:bg-[#1A91FF] info-btn"><i class="fa-solid fa-circle-info "></i></button>
                 <button class="bg-[#1A91FF30] p-3 rounded-full hover:bg-[#1A91FF] spker-btn"><i class="fa-solid fa-volume-high "></i></button>
             </div>
         </div>`
@@ -122,7 +122,7 @@ function cardFunction4() {
                 <h3 class="font-semibold">${e.meaning}</h3>
             </div>
             <div class="content-2 flex justify-between mt-10">
-                <button class="bg-[#1A91FF30] p-3 rounded-full hover:bg-[#1A91FF] info-btn"><i class="fa-solid fa-circle-info "></i></button>
+                <button id="${e.id}" class="bg-[#1A91FF30] p-3 rounded-full hover:bg-[#1A91FF] info-btn"><i class="fa-solid fa-circle-info "></i></button>
                 <button class="bg-[#1A91FF30] p-3 rounded-full hover:bg-[#1A91FF] spker-btn"><i class="fa-solid fa-volume-high "></i></button>
             </div>
         </div>`
@@ -132,19 +132,19 @@ function cardFunction4() {
     fetchi3()
 }
 
-
-function infoOfword() {
+// more info of card
+function infoOfword(id) {
     let info = document.querySelector(".info")
-    let url = "https://openapi.programming-hero.com/api/words/all"
+    let url = `https://openapi.programming-hero.com/api/word/${id}`;
     let fetching = async () => {
         let res = await fetch(url);
         let resp = await res.json();
-        // console.log(resp.data)
-        resp.data.forEach((e) => {
+        console.log(resp.data)
+
             info.innerHTML = `<div class="">
-            <h2 class="text-2xl font-semibold">${e.word} (<i class="fa-solid fa-microphone-lines"></i>:${e.pronunciation})</h2>
+            <h2 class="text-2xl font-semibold">${resp.data.word} (<i class="fa-solid fa-microphone-lines"></i>:${resp.data.pronunciation})</h2>
             <h3 class="font-semibold mt-2 mb-2">Meaning</h3>
-            <p class="font-semibold mb-3">${e.meaning}</p>
+            <p class="font-semibold mb-3">${resp.data.meaning}</p>
             <h2 class="font-semibold mb-2">Example</h2>
             <p class="mb-3">The kids were eager to open their gifts.</p>
             <p class="mb-2 font-semibold">সমার্থক শব্দ গুলো</p>
@@ -156,14 +156,14 @@ function infoOfword() {
             <button class="btn bg-[#422AD5] text-[#E0E7FF] mt-4 border-none">Complete Learning</button>
         </div>`
             // console.log(e)
-        })
+
     };
     fetching()
 
 }
-infoOfword()
+// infoOfword()
 
-
+// rander function
 let lessonfunction = () => {
     let url = "https://openapi.programming-hero.com/api/levels/all"
     let lessonUl = document.querySelector(".ul");
@@ -171,6 +171,7 @@ let lessonfunction = () => {
     let fetching = async () => {
         let res = await fetch(url);
         let resJsonDataGet = await res.json();
+        console.log(resJsonDataGet)
         resJsonDataGet.data.forEach((e) => {
             lessonUl.innerHTML += `<li class="event px-1 btn btn-outline btn-primary"><i class="fa-solid fa-book-open"></i>${e.level_no}.${e.lessonName}</li>`
         })
@@ -185,7 +186,7 @@ let lessonfunction = () => {
 
                 f.classList.add("action")
 
-
+                console.log(f.innerText.trim())
 
                 if (f.innerText.trim() == "7.Mastering Vocabulary") {
                    let word_continerCardd = document.querySelectorAll(".card");
@@ -193,6 +194,7 @@ let lessonfunction = () => {
                         el.classList.add("hidden")
                         console.log(el)
                     })
+                    word_continer.classList.add("hidden")
                     word_contibner_item.classList.add("hidden")
                     word_contibner_item2.classList.remove("hidden")
                 }
@@ -203,6 +205,7 @@ let lessonfunction = () => {
                         el.classList.add("hidden")
                         console.log(el)
                     })
+                    word_continer.classList.add("hidden")
                     word_contibner_item.classList.add("hidden")
                     word_contibner_item2.classList.remove("hidden")
                 }
@@ -213,6 +216,7 @@ let lessonfunction = () => {
                         el.classList.add("hidden")
                         console.log(el)
                     })
+                    word_continer.classList.add("hidden")
                     word_contibner_item.classList.add("hidden")
                     word_contibner_item2.classList.remove("hidden")
                 }
@@ -273,7 +277,7 @@ document.querySelector("#word-container")
             info.classList.add("opacity-100");
         }
         // console.log(e)
-        infoOfword()
+        infoOfword(e.target.id)
     });
 
 let body = document.querySelector("body");
@@ -282,7 +286,3 @@ body.addEventListener("click", (e) => {
         info.classList.add("hidden")
     }
 })
-
-
-// w-11/12 mx-auto my-25 flex gap-5 items-center justify-center flex-wrap
-// w-11/12 mx-auto my-25 flex gap-5 items-center justify-center flex-wrap bg-gray-200

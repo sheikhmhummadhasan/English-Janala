@@ -87,24 +87,25 @@
     </section>
 
     <!-- word container -->
-    <section id="word-container" class="w-11/12 mx-auto my-25 flex gap-5 items-center justify-center bg-gray-200">
+    <section id="word-container" class="w-11/12 rounded-md mx-auto my-25 p-10 flex gap-5 items-center justify-center bg-gray-200">
         <div class="c">
             <div class="word p-3 flex flex-col w-[100%] items-center justify-center">
                 <p>আপনি এখনো কোন Lesson Select করেন ন</p>
                 <h2 class="text-3xl font-bold mt-2">একটি Lesson Select করুন।</h2>
             </div>
-
-            <div class="word2 flex hidden mb-5 mt-5 flex-col items-center justify-center text-center">
-                <img src="./assets/alert-error.png" alt="">
-                <p>এই Lesson এ এখনো কোন Vocabulary যুক্ত করা হয়নি।</p>
-                <h2 class="text-3xl font-bold mt-2">নেক্সট Lesson এ যান</h2>
-            </div>
         </div>
     </section>
 
+    <div class=" bg-gray-200 p-5 w-5/12 mx-auto rounded-lg word2 flex hidden mb-5 mt-5 flex-col items-center justify-center text-center">
+        <img src="./assets/alert-error.png" alt="">
+        <p>এই Lesson এ এখনো কোন Vocabulary যুক্ত করা হয়নি।</p>
+        <h2 class="text-3xl font-bold mt-2">নেক্সট Lesson এ যান</h2>
+    </div>
+
     <!-- info of word container -->
-    <section class="info flex items-center justify-center w-5/12 mx-auto absolute top-[150%] left-[30%] p-5 rounded-lg hidden bg-gray-300">
-        
+    <section
+        class=" info flex items-center justify-center w-5/12 mx-auto absolute top-[150%] left-[30%] p-5 rounded-lg hidden bg-gray-300">
+
     </section>
 
     <!-- FAQ -->
@@ -159,6 +160,10 @@
         </div>
     </footer>
     <script src="script.js"></script>
+
+    <div class="copyright flex justify-center items-center text-[0.8rem] p-2">
+        <p>&copy; all copyright are resurve.2026 english janala</p>
+    </div>
 </body>
 
 </html>
